@@ -50,7 +50,7 @@
     const errorMsg = document.getElementById("error-msg");
 
     if (!postId || !posts[postId]) {
-      titleEl.textContent = "Post not found.";
+      titleEl.textContent = "No Post was found";
       editBtn.hidden = true;
     } else {
       const post = posts[postId];
@@ -82,7 +82,7 @@
         const newContent = editContent.value.trim();
 
         if (!newTitle || !newContent) {
-          errorMsg.textContent = "Title and content cannot be empty.";
+          errorMsg.textContent = "TheTitle and content cannot be empty.";
           return;
         }
 
