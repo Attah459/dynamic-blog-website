@@ -78,4 +78,25 @@
       editForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
-       
+        const newTitle = editTitle.value.trim();
+        const newContent = editContent.value.trim();
+
+        if (!newTitle || !newContent) {
+          errorMsg.textContent = "Title and content cannot be empty.";
+          return;
+        }
+
+        posts[postId].title = newTitle;
+        posts[postId].content = newContent;
+        localStorage.setItem("posts", JSON.stringify(posts));
+
+        titleEl.textContent = newTitle;
+        contentEl.textContent = newContent;
+
+        editForm.hidden = true;
+        errorMsg.textContent = "";
+      });
+    }
+  </script>
+</body>
+</html>
