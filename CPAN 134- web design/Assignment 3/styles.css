@@ -1,0 +1,22 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 2rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+.post {
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 0;
+}
+
+.post-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.post-content {
+  margin-top: 0.5rem;
+}
