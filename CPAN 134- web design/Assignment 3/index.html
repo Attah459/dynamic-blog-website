@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Blog</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Blog Posts</h1>
+  <div id="posts-container"></div>
+
+  <script>
+    // Load blog posts from localStorage
+    const posts = JSON.parse(localStorage.getItem('posts')) || [];
+
+    const container = document.getElementById('posts-container');
+
+    if (posts.length === 0) {
+      container.innerHTML = "<p>No blog posts found.</p>";
+    } else {
+      posts.forEach(post => {
+        const postDiv = document.createElement('div');
+        postDiv.classList.add('post');
+
+        postDiv.innerHTML = `
+          <div class="post-title">${post.title}</div>
+          <div class="post-content">${post.content}</div>
+        `;
+
+        container.appendChild(postDiv);
+      });
+    }
+  </script>
+</body>
+</html>
